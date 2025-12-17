@@ -25,14 +25,14 @@ export default function CoastalEditionSection() {
                         Our new cozy collection is made with environmentally friendly materials and<br />
                         simple to care for so you can stay cozy wherever.
                     </p>
-                    <button className="px-6 py-2 border-1 border-black hover:bg-black rounded-[6px] hover:text-white transition-colors font-medium">
+                    <button className="px-6 py-2 border border-black hover:bg-black rounded-[6px] hover:text-white transition-colors font-medium">
                         Shop Now
                     </button>
                 </div>
                 <div className="relative max-w-5xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-0">
                         {slides.map((slide, index) => (
-                            <div key={slide.id} className="relative aspect-[3/4] bg-gray-100">
+                            <div key={slide.id} className="relative aspect-3/4 bg-gray-100">
                                 <img
                                     src={slide.image}
                                     alt={`Coastal Edition ${index + 1}`}

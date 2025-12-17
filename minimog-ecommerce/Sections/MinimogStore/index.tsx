@@ -135,7 +135,7 @@ export default function LivingOutSection() {
                         <p className="text-[16px] font-semibold tracking-widest text-gray-700">
                             Mix & Match
                         </p>
-                        <h3 className="text-5xl lg:text-6xl font-normal leading-tight text-gray-900 mt-[-20px]">
+                        <h3 className="text-5xl lg:text-6xl font-normal leading-tight text-gray-900 -mt-5">
                             Layer up with<br />
                             pieces designed
                         </h3>
