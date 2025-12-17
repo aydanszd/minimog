@@ -71,7 +71,7 @@ export default function ShopCategories() {
     };
 
     return (
-        <section className="w-full bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <section className="w-full bg-white py-12 px-4 sm:px-6 lg:px-8 mt-16">
             <div className="max-w-7xl mx-auto">
                 <div className="flex items-center justify-between mb-10">
                     <h2 className="text-3xl sm:text-4xl font-normal text-gray-800">

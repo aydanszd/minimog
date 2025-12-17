@@ -3,7 +3,7 @@ import { ShoppingCart, MapPin, MessageCircle } from 'lucide-react';
 
 export default function ReLeatherSection() {
     return (
-        <div className="relative min-h-screen bg-white">
+        <div className="relative min-h-screen bg-white mt-20">
             <div className="grid lg:grid-cols-2 w-full">
                 <div className="relative h-screen bg-gray-100">
                     <img
