@@ -8,6 +8,7 @@ import HotThisWeekSection from "@/Sections/BeautifullyFunctional";
 import CoastalEditionSection from "@/Sections/TheCoastalEditio";
 import LivingOutSection from "@/Sections/MinimogStore";
 import HappyCustomers from "@/Sections/HappyCustomers";
+import InstagramFeaturesSection from "@/Sections/FollowUsInstagram";
 
 export default function HomePage() {
     return (
@@ -21,6 +22,7 @@ export default function HomePage() {
             <CoastalEditionSection/>
             <LivingOutSection/>
             <HappyCustomers/>
+            <InstagramFeaturesSection/>
         </div>
     )
 }
