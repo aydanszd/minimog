@@ -5,6 +5,8 @@ import HeroBanner from "@/Sections/HeroBanner";
 import ReLeatherSection from "@/Sections/ReLeatherSection";
 import ShopCategories from "@/Sections/ShopByCategories";
 import HotThisWeekSection from "@/Sections/BeautifullyFunctional";
+import CoastalEditionSection from "@/Sections/TheCoastalEditio";
+import LivingOutSection from "@/Sections/MinimogStore";
 
 export default function HomePage() {
     return (
@@ -15,6 +17,8 @@ export default function HomePage() {
             <ReLeatherSection/>
             <MixMatchSection/>
             <HotThisWeekSection/>
+            <CoastalEditionSection/>
+            <LivingOutSection/>
         </div>
     )
 }
