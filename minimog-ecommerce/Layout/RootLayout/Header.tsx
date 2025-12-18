@@ -27,7 +27,6 @@ export default function Header() {
         <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
-                    {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="lg:hidden p-2 -ml-2 rounded-md text-black hover:bg-gray-100 transition-colors"
@@ -37,7 +36,6 @@ export default function Header() {
                         {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
                     </button>
 
-                    {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
                         {menuItems.map((item, index) => (
                             <div key={index} className="group relative">
@@ -64,8 +62,6 @@ export default function Header() {
                             </div>
                         ))}
                     </div>
-
-                    {/* Logo - Centered */}
                     <div className="absolute left-1/2 transform -translate-x-1/2">
                         <a href="/" className="flex items-center">
                             <img
@@ -76,7 +72,6 @@ export default function Header() {
                         </a>
                     </div>
 
-                    {/* Right Icons */}
                     <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
                         <button 
                             className="p-2 text-black hover:text-gray-800 transition-colors rounded-md hover:bg-gray-100" 
@@ -109,8 +104,6 @@ export default function Header() {
                         </button>
                     </div>
                 </div>
-
-                {/* Mobile Menu */}
                 {isMenuOpen && (
                     <div className="lg:hidden pb-4 border-t border-gray-200 animate-in slide-in-from-top-2 duration-200">
                         {menuItems.map((item, index) => (
@@ -130,8 +123,6 @@ export default function Header() {
                                 </DropdownMenu>
                             </div>
                         ))}
-                        
-                        {/* Mobile-only Icons */}
                         <div className="flex items-center justify-around pt-4 mt-4 border-t border-gray-200 sm:hidden">
                             <button className="flex flex-col items-center space-y-1 text-gray-700 hover:text-gray-900">
                                 <User size={20} />

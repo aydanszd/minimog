@@ -66,7 +66,7 @@ export default function HeroBanner() {
                             index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
                         }`}
                     >
-                        {/* Background Image */}
+
                         <div className="absolute inset-0">
                             <img
                                 src={slide.image}
@@ -76,7 +76,6 @@ export default function HeroBanner() {
                             <div className="absolute inset-0 bg-linear-to-r from-white/30 to-transparent"></div>
                         </div>
 
-                        {/* Content Container */}
                         <div className="relative h-full">
                             <div className="h-full max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
                                 <div className="flex items-center h-full">
@@ -96,8 +95,6 @@ export default function HeroBanner() {
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Footer Link - Hidden on Mobile */}
                             <div className="absolute bottom-8 right-8 hidden lg:block">
                                 <a 
                                     href={slide.footerLink} 
@@ -111,8 +108,6 @@ export default function HeroBanner() {
                     </div>
                 ))}
             </div>
-
-            {/* Navigation Arrows */}
             <button
                 onClick={prevSlide}
                 className="absolute left-4 md:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/80 hover:bg-white shadow-lg transition-all"
@@ -128,8 +123,6 @@ export default function HeroBanner() {
             >
                 <ChevronRight size={24} className="text-gray-900" />
             </button>
-
-            {/* Slide Indicators */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 lg:right-8 lg:top-1/2 lg:-translate-y-1/2 lg:left-auto lg:translate-x-0 z-20 flex lg:flex-col gap-3">
                 {slides.map((_, index) => (
                     <button
@@ -145,8 +138,6 @@ export default function HeroBanner() {
                     />
                 ))}
             </div>
-
-            {/* Side Action Buttons - Desktop Only */}
             <div className="hidden xl:flex fixed right-0 top-1/2 -translate-y-1/2 z-30 flex-col">
                 <button 
                     className="bg-orange-500 hover:bg-orange-600 text-white p-4 transition-colors"
@@ -168,7 +159,6 @@ export default function HeroBanner() {
                 </button>
             </div>
 
-            {/* Mobile Action Buttons */}
             <div className="xl:hidden absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-3">
                 <button 
                     className="bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all"
