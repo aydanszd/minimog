@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 
 const categories = [
@@ -54,13 +54,45 @@ const categories = [
 ];
 
 export default function ShopCategories() {
+    type Product = {
+        id: string
+        name: string
+        image?: string
+        createdAt?: string
+    }
+
     const [currentPage, setCurrentPage] = useState(1);
+    const [products, setProducts] = useState<Product[] | null>(null)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState<string | null>(null)
+
+    useEffect(() => {
+        let mounted = true
+        async function load() {
+            setLoading(true)
+            try {
+                const res = await fetch('/api/items')
+                if (!res.ok) throw new Error(`HTTP ${res.status}`)
+                const data = await res.json()
+                console.log('ShopByCategories products:', data)
+                if (mounted) setProducts(data)
+            } catch (err: any) {
+                console.error('ShopByCategories fetch error:', err)
+                if (mounted) setError(err?.message ?? String(err))
+            } finally {
+                if (mounted) setLoading(false)
+            }
+        }
+        load()
+        return () => { mounted = false }
+    }, [])
     const itemsPerPage = 4;
-    const totalPages = Math.ceil(categories.length / itemsPerPage);
+    const dataSource = products && products.length > 0 ? products.map((p, idx) => ({ id: p.id, title: p.name, itemCount: 0, image: p.image })) : categories
+    const totalPages = Math.ceil(dataSource.length / itemsPerPage);
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const currentCategories = categories.slice(startIndex, endIndex);
+    const currentCategories = dataSource.slice(startIndex, endIndex);
 
     const goToNextPage = () => {
         setCurrentPage((prev) => Math.min(prev + 1, totalPages));
@@ -117,14 +149,14 @@ export default function ShopCategories() {
                                 />
                             </div>
 
-                            <div className="p-5">
+                                <div className="p-5">
                                 <div className="flex items-center justify-between">
                                     <div>
                                         <h3 className="text-lg font-medium text-gray-900 mb-0.5">
-                                            {category.title}
+                                                {category.title}
                                         </h3>
                                         <p className="text-sm text-gray-500">
-                                            {category.itemCount} Artikel
+                                                {category.itemCount ?? 0} Artikel
                                         </p>
                                     </div>
                                     <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-gray-900 transition-all duration-300">
