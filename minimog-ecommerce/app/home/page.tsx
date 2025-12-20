@@ -8,7 +8,6 @@ import CoastalEditionSection from "@/Sections/TheCoastalEditio";
 import LivingOutSection from "@/Sections/MinimogStore";
 import HappyCustomers from "@/Sections/HappyCustomers";
 import InstagramFeaturesSection from "@/Sections/FollowUsInstagram";
-
 export default function HomePage() {
     return (
         <div>
