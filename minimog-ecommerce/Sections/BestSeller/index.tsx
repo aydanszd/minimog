@@ -2,8 +2,6 @@
 import { useState, useEffect } from 'react';
 import { Heart, ChevronDown } from 'lucide-react';
 
-// Products are loaded from the API (Prisma). No static product data.
-
 const categories = [
     { value: 'best sellers', label: 'best sellers' },
     { value: 'new arrivals', label: 'new arrivals' },
@@ -28,19 +26,18 @@ export default function BestSellers() {
                 if (!res.ok) throw new Error(`HTTP ${res.status}`)
                 const data = await res.json()
                 console.log('BestSellers fetched products:', data)
-                // select items with index 8..17 (ids 9-18 in a 1-based list)
                 const slice = Array.isArray(data) ? data.slice(8, 18) : []
                 const staticColors = [
-                    ['#000000', '#F5DEB3'], // Strappy crop top - black, beige
-                    ['#000000', '#FFFFFF', '#F5DEB3'], // Flat sandals - black, white, beige
-                    ['#000000'], // Printed tank top - black
-                    ['#000000', '#D3D3D3'], // Cotton cargo shorts - black, grey
-                    ['#F5DEB3'], // Rustic strappy crop top - beige
-                    ['#000000'], // Mini dress - black
-                    ['#F5DEB3'], // Contrast trainers - beige
-                    ['#8B4513'], // Linen waistcoat - brown
-                    ['#87CEEB'], // Denim bag - light blue
-                    ['#1E3A5F', '#FFFFFF'], // Striped bandeau - navy, white
+                    ['#000000', '#F5DEB3'], 
+                    ['#000000', '#FFFFFF', '#F5DEB3'], 
+                    ['#000000'], 
+                    ['#000000', '#D3D3D3'], 
+                    ['#F5DEB3'], 
+                    ['#000000'], 
+                    ['#F5DEB3'], 
+                    ['#8B4513'], 
+                    ['#87CEEB'], 
+                    ['#1E3A5F', '#FFFFFF'], 
                 ]
                 const mapped = slice.map((p: any, i: number) => ({
                     id: p.id,

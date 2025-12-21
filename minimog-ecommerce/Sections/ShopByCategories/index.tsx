@@ -2,57 +2,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 
-const categories = [
-    {
-        id: 1,
-        title: 'Knit Wears',
-        itemCount: 19,
-        image: 'https://fashion.minimog.co/cdn/shop/files/collection-shirt-long.webp?v=1709121151&width=720'
-    },
-    {
-        id: 2,
-        title: 'Summer Bags',
-        itemCount: 32,
-        image: 'https://fashion.minimog.co/cdn/shop/files/collection-list-9.webp?v=1708672955&width=720'
-    },
-    {
-        id: 3,
-        title: 'Sneakers',
-        itemCount: 6,
-        image: 'https://fashion.minimog.co/cdn/shop/files/collection-list-10.webp?v=1708672954&width=720'
-    },
-    {
-        id: 4,
-        title: 'Accessories',
-        itemCount: 8,
-        image: 'https://fashion.minimog.co/cdn/shop/files/collection-list-11.webp?v=1708672955&width=720'
-    },
-    {
-        id: 5,
-        title: 'Dresses',
-        itemCount: 24,
-        image: 'https://fashion.minimog.co/cdn/shop/files/Bitmap.webp?v=1709121151&width=533'
-    },
-    {
-        id: 6,
-        title: 'Shirts',
-        itemCount: 15,
-        image: 'https://fashion.minimog.co/cdn/shop/files/collection-shirt-long.webp?v=1709121151&width=720'
-    },
-    {
-        id: 7,
-        title: 'Bags & Purses',
-        itemCount: 28,
-        image: 'https://fashion.minimog.co/cdn/shop/files/collection-list-9.webp?v=1708672955&width=720'
-    },
-    {
-        id: 8,
-        title: 'Footwear',
-        itemCount: 12,
-        image: 'https://fashion.minimog.co/cdn/shop/files/collection-list-10.webp?v=1708672954&width=720'
-    }
-];
-
 export default function ShopCategories() {
     type Product = {
         id: string
@@ -87,7 +36,7 @@ export default function ShopCategories() {
         return () => { mounted = false }
     }, [])
     const itemsPerPage = 4;
-    const dataSource = products && products.length > 0 ? products.map((p, idx) => ({ id: p.id, title: p.name, itemCount: 0, image: p.image })) : categories
+    const dataSource = products && products.length > 0 ? products.map((p, idx) => ({ id: p.id, title: p.name, itemCount: 0, image: p.image })) : []
     const totalPages = Math.ceil(dataSource.length / itemsPerPage);
 
     const startIndex = (currentPage - 1) * itemsPerPage;
