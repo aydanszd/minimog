@@ -1,0 +1,19 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Baku",
+			"country": {
+				"code": "AZ",
+				"name": "Azerbaijan"
+			},
+			"subdivision": {
+				"code": "BA",
+				"name": "Baku City"
+			},
+			"timezone": "Asia/Baku",
+			"latitude": 40.3771,
+			"longitude": 49.8875
+		},
+		"timestamp": 1766075227509
+	}
+}

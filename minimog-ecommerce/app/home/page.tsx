@@ -1,13 +1,13 @@
-import BestSellers from "@/Sections/BestSeller";
-import MixMatchSection from "@/Sections/CheckOutMixMatch";
-import HeroBanner from "@/Sections/HeroBanner"; 
-import ReLeatherSection from "@/Sections/ReLeatherSection";
-import ShopCategories from "@/Sections/ShopByCategories";
-import HotThisWeekSection from "@/Sections/BeautifullyFunctional";
-import CoastalEditionSection from "@/Sections/TheCoastalEditio";
-import LivingOutSection from "@/Sections/MinimogStore";
-import HappyCustomers from "@/Sections/HappyCustomers";
-import InstagramFeaturesSection from "@/Sections/FollowUsInstagram";
+import BestSellers from "@/features/Sections/BestSeller";
+import MixMatchSection from "@/features/Sections/CheckOutMixMatch";
+import HeroBanner from "@/features/Sections/HeroBanner"; 
+import ReLeatherSection from "@/features/Sections/ReLeatherSection";
+import ShopCategories from "@/features/Sections/ShopByCategories";
+import HotThisWeekSection from "@/features/Sections/BeautifullyFunctional";
+import CoastalEditionSection from "@/features/Sections/TheCoastalEditio";
+import LivingOutSection from "@/features/Sections/MinimogStore";
+import HappyCustomers from "@/features/Sections/HappyCustomers";
+import InstagramFeaturesSection from "@/features/Sections/FollowUsInstagram";
 export default function HomePage() {
     return (
         <div>
